@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: ./camagru/frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./camagru/frontend/application_files:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - app_network
+
+  backend:
+    container_name: backend
+    build:
+      context: ./camagru/backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgres://user:password@db:5432/mydatabase
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+  db:
+    container_name: db
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+volumes:
+  postgres_data:
+
+networks:
+  app_network:
