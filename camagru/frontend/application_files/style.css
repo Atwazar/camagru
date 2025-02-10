@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    border-radius: 8px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+ /* 🌍 Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding-top: 60px; /* Ajout d'un espace sous la navbar */
+}
+
+/* 📌 Navbar Fixe */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #2C3E50;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* 📌 Partie droite de la navbar */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* ✅ Ajout d'espace entre les éléments */
+}
+
+/* 🔔 Icône de notifications */
+.notifications {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.notifications span {
+    background: red;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 50%;
+    padding: 3px 7px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+/* 👤 Profil */
+.profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    gap: 10px; /* ✅ Ajoute de l'espace entre l'image et le texte */
+    padding: 5px; /* ✅ Ajoute du padding pour éviter que ce soit trop collé */
+}
+
+/* 📸 Photo de profil */
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 🏷️ Nom d'utilisateur */
+.username {
+    font-weight: bold;
+}
+
+/* ⬇️ Dropdown Menu */
+.profile .dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: white;
+    color: black;
+    width: 160px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px 0;
+}
+
+.profile.open .dropdown {
+    display: block;
+}
+
+.profile .dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    transition: background 0.3s;
+}
+
+.profile .dropdown a:hover {
+    background: #ddd;
+}
+
+.add-picture-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.add-picture-button:hover {
+  background-color: #0056b3;
+}
